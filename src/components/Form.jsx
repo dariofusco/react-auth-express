@@ -1,6 +1,5 @@
-import { useState, useEffect } from 'react'
-import axios from "axios";
-const apiUrl = import.meta.env.VITE_BASE_API_URL;
+import { useState } from 'react'
+import axios from "../utils/axiosClient";
 
 function Form({ tags, categories, onCreate }) {
 
@@ -19,7 +18,7 @@ function Form({ tags, categories, onCreate }) {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        const post = await axios.post(`${apiUrl}/posts`, postData, {
+        const post = await axios.post(`/posts`, postData, {
             headers: {
                 "Content-Type": "multipart/form-data"
             }

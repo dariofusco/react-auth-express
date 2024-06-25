@@ -1,7 +1,6 @@
-import axios from "axios";
+import axios from "../utils/axiosClient";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-const apiUrl = import.meta.env.VITE_BASE_API_URL;
 import Card from '../components/Card'
 
 export default function () {
@@ -10,9 +9,9 @@ export default function () {
     const [post, setPost] = useState({});
 
     useEffect(() => {
-        axios.get(`${apiUrl}/posts/${slug}`)
+        axios.get(`/posts/${slug}`)
             .then(res => {
-                setPost( res.data)
+                setPost(res.data)
             });
     }, [slug])
 

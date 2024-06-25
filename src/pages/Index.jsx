@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
-import axios from "axios"
-const apiUrl = import.meta.env.VITE_BASE_API_URL;
+import axios from "../utils/axiosClient"
 import Card from '../components/Card'
 
 export default function () {
     const [posts, setPosts] = useState([]);
 
     const fetchPost = async () => {
-        await axios.get(`${apiUrl}/posts`)
+        await axios.get(`/posts`)
             .then(res => {
                 const posts = res.data;
                 setPosts(posts);
