@@ -38,10 +38,6 @@ function Form({ tags, categories }) {
         setPostData(data => ({ ...data, [key]: newValue }));
     }
 
-    const removePost = (indexToDelete) => {
-        setPosts(array => array.filter((post, index) => index !== indexToDelete));
-    }
-
     return (
         <>
 

@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
+import { FaTrashAlt } from "react-icons/fa";
 
-export default function ({ title, image, content, tags, published, slug, category }) {
+export default function ({ title, image, content, tags, published, slug, category, onDelete }) {
+
+    const deletePost = async () => {
+        await onDelete(slug);
+    }
+
     return (
         <div className={`card ${published ? 'published' : ''}`}>
             {image &&
@@ -14,7 +20,7 @@ export default function ({ title, image, content, tags, published, slug, categor
                 ))}
             </div>
             <h3>{category}</h3>
-            <Link to={`/show/${slug}`}>Show</Link>
+            <button onClick={deletePost}><FaTrashAlt /></button>
         </div>
     )
 }
