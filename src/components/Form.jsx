@@ -114,6 +114,7 @@ function Form({ tags, categories }) {
                         value={postData.categoryId}
                         onChange={event => changePostData("categoryId", Number(event.target.value))}
                     >
+                        <option>Seleziona una categoria</option>
                         {categories.map(category => (
                             <option key={category.id} value={category.id}>{category.name}</option>
                         ))}
