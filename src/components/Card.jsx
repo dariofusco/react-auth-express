@@ -21,6 +21,7 @@ export default function ({ title, image, content, tags, published, slug, categor
             </div>
             <h3>{category}</h3>
             <button onClick={deletePost}><FaTrashAlt /></button>
+            <Link to={`/show/${slug}/edit`}>Modifica</Link>
         </div>
     )
 }

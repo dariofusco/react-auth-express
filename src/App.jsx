@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Index from "./pages/Index";
 import Show from "./pages/Show";
 import Create from "./pages/Create";
+import Edit from "./pages/Edit";
 import { AuthProvider } from "./contexts/AuthContext";
 import LogIn from "./pages/Login";
 import PrivatePage from "./middleware/PrivatePage";
@@ -32,6 +33,7 @@ function App() {
             </PrivatePage>
           }>
             <Route path="create" element={<Create />} />
+            <Route path="show/:slug/edit" element={<Edit />} />
           </Route>
 
         </Routes>
