@@ -6,10 +6,10 @@ export default function () {
     const { login } = useAuth();
 
     const initialData = {
-        email: '',
-        password: ''
+        email: 'giuseppe@verdi.com',
+        password: 'password'
     };
-    
+
     const [formData, setFormData] = useState(initialData);
 
     const [loginError, setLoginError] = useState(null);
