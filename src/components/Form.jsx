@@ -1,7 +1,10 @@
 import { useState } from 'react'
 import axios from "../utils/axiosClient";
+import { useNavigate } from "react-router-dom";
 
-function Form({ tags, categories, onCreate }) {
+function Form({ tags, categories }) {
+
+    const navigate = useNavigate();
 
     const defaultPostData = {
         title: "",
@@ -24,8 +27,9 @@ function Form({ tags, categories, onCreate }) {
             }
         });
         console.log(post);
-
-        onCreate();
+        if (post.status < 400) {
+            navigate(`/show/${post.data.slug}`)
+        }
 
         setPostData(defaultPostData);
     }

@@ -30,9 +30,6 @@ export default function () {
             <Form
                 tags={tags}
                 categories={categories}
-                onCreate={() => {
-                    fetchPost()
-                }}
             />
         </>
     )

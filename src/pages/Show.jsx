@@ -1,5 +1,5 @@
 import axios from "../utils/axiosClient";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Card from '../components/Card'
 
@@ -16,11 +16,13 @@ export default function () {
     }, [slug])
 
     return (<>
+        <Link to="/index" relative="path">Indietro</Link>
         {post && <Card
             slug={post.slug}
             title={post.title}
             content={post.content}
             tags={post?.tags ?? []}
+            category={post.category}
             published={post.published}
         />}
     </>)
